@@ -1,0 +1,18 @@
+<h1><%= @restaurant.name %></h1>
+<p><%= @restaurant.address %></p>
+<p><%= @restaurant.phone_number %></p>
+<p><%= @restaurant.category %></p>
+
+<h2>Reviews de cochon</h2>
+<button class= 'btn btn-success'> <%= link_to "Ajoute une review mon bougre", new_restaurant_review_path(@restaurant) %> </button>
+<% @restaurant.reviews.each do |review| %>
+<%= review.rating %>
+<%= review.content %>
+<% end %>
+
+
+<div><%= link_to "Edit ce resto chacal", edit_restaurant_path(@restaurant)  %></div>
+
+<div>
+<button class= 'btn btn-success'><%= link_to "Reviens à la page d'accueil chacal", restaurants_path %></button>
+</div>

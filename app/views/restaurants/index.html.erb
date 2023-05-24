@@ -1,0 +1,14 @@
+<h1>Vos restos chacals</h1>
+<div>
+<% @restaurants.each do |restaurant| %>
+<div>
+<%= link_to restaurant.name, restaurant_path(restaurant.id) %>
+<%= restaurant.address %>
+<%= restaurant.category %>
+<%= restaurant.phone_number %>
+</div>
+</div>
+<% end %>
+
+
+<%= link_to "Crée ton resto chacal", new_restaurant_path %>
